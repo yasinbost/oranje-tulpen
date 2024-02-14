@@ -21,7 +21,7 @@ import { useEffect, useState } from "react";
 
 const Cart = () => {
   //const { items } = useCart()
-  const itemCount = 1;
+  const itemCount = 0;
 
   const [isMounted, setIsMounted] = useState<boolean>(false);
 
