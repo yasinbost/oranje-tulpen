@@ -1,9 +1,9 @@
 import React from "react";
-import Title from "../ui/Title";
+import Title from "./Title";
 
 const Footer = () => {
   return (
-    <div className="bg-secondary text-white">
+    <div className="bg-orange-800 text-white">
       <div className="container mx-auto pt-16 pb-6">
         <div className="flex md:justify-between justify-center text-center flex-wrap md:gap-y-0 gap-y-6 ">
           <div className="md:flex-1">
@@ -75,7 +75,7 @@ const Footer = () => {
           </div>
         </div>
         <p className="text-center mt-10">
-          © 2022 All Rights Reserved By Free Html Templates
+          © 2024 All Rights Reserved By OranjeTulpen inc.
         </p>
       </div>
     </div>

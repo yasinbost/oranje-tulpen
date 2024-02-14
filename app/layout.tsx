@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
-import { siteconfig } from "@/config/site";
+import { Siteconfig } from "@/config/site";
 import { cn } from "@/lib/utils";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: siteconfig.name,
-    template: `%s | ${siteconfig.name}`,
+    default: Siteconfig.name,
+    template: `%s | ${Siteconfig.name}`,
   },
-  description: siteconfig.decription,
+  description: Siteconfig.decription,
 
   icons: [
     {
@@ -33,7 +34,11 @@ export default function RootLayout({
         className={cn("relative h-full font-sans antialiased", inter.className)}
       >
         <main className="relative flex flex-col min-h-screen">
-          <div className="flex-grow flex-1">{children} </div>
+          <div>
+            <Header />
+            {children}
+            <Footer />
+          </div>
         </main>
       </body>
     </html>

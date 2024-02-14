@@ -4,6 +4,7 @@ import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Link from "next/link";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { ArrowDownToLine, CheckCircle, Leaf } from "lucide-react";
+import Logo from "@/components/Logo";
 
 const perks = [
   {
@@ -37,6 +38,7 @@ export default function Home() {
             {" "}
             Heb je ooit schilderen op water
           </h1>
+
           <p className="mt-text-lg max-w-prose text-muted-foreground">
             {" "}
             Welcome to Oranje tulpen Art school{" "}
