@@ -4,7 +4,7 @@ import { buttonVariants } from "./ui/button";
 import { Button } from "./ui/button";
 export default function WelcomeSection() {
   return (
-    <div className="bg-red-300 py-20 mx-auto text-center flex flex-col items-center ">
+    <div className="bg-gray-300 py-20 mx-auto text-center flex flex-col items-center ">
       <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
         {" "}
         Heb je ooit schilderen op water
