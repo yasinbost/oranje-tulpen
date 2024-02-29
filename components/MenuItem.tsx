@@ -17,7 +17,7 @@ function Menuitem(item: {
   hasSubMenu: boolean;
 }) {
   const [isItemOpen, setItem] = useState(false);
-  const ismobile = true;
+  const ismobile = false;
 
   function toggleItem() {
     return setItem(!isItemOpen);
