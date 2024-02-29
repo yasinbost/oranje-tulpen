@@ -10,33 +10,13 @@ import { Button } from "./ui/button";
 import { title } from "process";
 import Menuitem from "./MenuItem";
 import { Menu } from "lucide-react";
+import { MobileNav } from "./MobileNav";
+import menu_items from "../lib/consts";
 
 const Header = () => {
   const [isMenuModal, setIsMenuModal] = useState(false);
 
-  const menu_items = [
-    {
-      name: "Home",
-      link: "/",
-    },
-    {
-      name: "Wat is Ebru?",
-      link: "/watisEbru",
-    },
-    {
-      name: "Workshops",
-      link: "/workshops",
-      submenu: [
-        { title: "Boekbinding", link: "/workshop1" },
-        { title: "Sjaal Marmering", link: "/workshop2" },
-        { title: "Akkase Marmering", link: "/workshop2" },
-      ],
-    },
-    {
-      name: "Shop",
-      link: "/shop",
-    },
-  ];
+ 
 
   return (
     <div className="h-[4.8rem] bg-gray-700 sticky z-50 top-0 inset-x-0 ">
@@ -44,36 +24,20 @@ const Header = () => {
         <Logo />
         <nav
           className={`sm:static absolute top-0 left-0 sm:w-auto sm:h-auto w-full h-screen sm:text-white text-black sm:bg-transparent bg-white sm:flex hidden ${
-            isMenuModal === true && "!grid place-content-center"
+            isMenuModal && "!grid place-content-center bg-gray-200"
           }`}
         >
           <ul className="flex gap-x-2 sm:flex-row flex-col items-center">
-            {/* menu_items.map((item, index) => (
-              {menu_items.map((item, index) => (
-                <Menuitem item ={item} />
-              ))}
-            )) */}
-            {/* {menu_items.map((item, index) => (
-              <li
-                key={index}
-                className="px-[5px] py-[10px] uppercase hover:text-red-700 cursor-pointer"
-              >
-                <Link href={item.link}>{item.name}</Link>
-              </li>
-            ))} */}
+            {menu_items.map((item) => (
+              <Menuitem
+                key={item.name}
+                name={item.name}
+                link={item.link}
+                hasSubMenu={item.hasSubMenu}
+                submenu={item.submenu}
+              />
+            ))}
 
-            {/* <li className="px-[5px] py-[10px] uppercase hover:text-red-700 cursor-pointer">
-              <Link href="/">Home</Link>
-            </li>
-            <li className="px-[5px] py-[10px] uppercase hover:text-red-700 cursor-pointer">
-              <Link href="/watisEbru">Wat is Ebru?</Link>
-            </li>
-            <li className="px-[5px] py-[10px] uppercase hover:text-red-700 cursor-pointer">
-              <Link href="/workshops">Workshops</Link>
-            </li>
-            <li className="px-[5px] py-[10px] uppercase hover:text-red-700 cursor-pointer">
-              <Link href="/shop">Shop</Link>
-            </li> */}
           </ul>
 
           {isMenuModal && (
@@ -94,17 +58,13 @@ const Header = () => {
           </Link>
           <Cart />
 
-          <a href="#" className="md:inline-block hidden sm">
+          <a href="#" className="hidden md:inline-block ">
             <Button className="btn-primary hover:text-red-700">
               Contact Us
             </Button>
           </a>
-          <button
-            className="sm:hidden inline-block"
-            onClick={() => setIsMenuModal(true)}
-          >
-            <GiHamburgerMenu className="text-xl hover:text-primary transition-all cursor-pointer" />
-          </button>
+          <MobileNav />
+        
         </div>
       </div>
     </div>
