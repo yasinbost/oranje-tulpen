@@ -5,6 +5,7 @@ import { Siteconfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import HeaderCopy from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body
         className={cn("relative h-full font-sans antialiased", inter.className)}
       >
+        {/*,`${process.env.NODE_ENV=="development" ? "debug-screens:" : ""}` Bu class body eklenebilir. screen size i gormek icin*/}
         <main className="relative flex flex-col min-h-screen">
           <div>
             <Header />

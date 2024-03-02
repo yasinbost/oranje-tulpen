@@ -16,6 +16,8 @@ import Menuitem from "./MenuItem";
 import { Key } from "react";
 import Logo from "./Logo";
 import menu_items from "@/lib/consts";
+import MenuitemCopy from "./MenuItem";
+
 
 export function MobileNav() {
   const isLogin = false;
@@ -31,20 +33,17 @@ export function MobileNav() {
           </SheetTitle>
           <SheetDescription></SheetDescription>
         </SheetHeader>
-        <div className="flex flex-col items-center justify-between h-4/6">
-          <div> <ul>
-            {menu_items.map((item) => (
-              <Menuitem
-                key={item.name}
-                name={item.name}
-                link={item.link}
-                hasSubMenu={item.hasSubMenu}
-                submenu={item.submenu}
-              />
-            ))}
-          </ul></div>
-
-          <div className={`${isLogin && "hidden"}`}>
+        <div className="flex flex-col items-center gap-4  transition-all">
+          {menu_items.map((item) => (
+            <MenuitemCopy
+              key={item.name}
+              name={item.name}
+              link={item.link}
+              hasSubMenu={item.hasSubMenu}
+              submenu={item.submenu}
+            />
+          ))}
+            <div className={`${isLogin && "hidden"}`}>
             <div >
               <Button> Sign up</Button>
             </div>
@@ -53,7 +52,12 @@ export function MobileNav() {
             </div>
           </div>
         </div>
+
+
       </SheetContent>
     </Sheet>
   );
 }
+
+
+

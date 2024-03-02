@@ -22,7 +22,12 @@ const menu_items = [
     {
       name: "Shop",
       link: "/shop",
-      hasSubMenu: false,
+      hasSubMenu: true,
+      submenu: [
+        { title: "Test1", link: "/workshop1" },
+        { title: "Test2", link: "/workshop2" },
+        { title: "Test3", link: "/workshop3" },
+      ],
     },
   ];
 
