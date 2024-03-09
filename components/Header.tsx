@@ -8,12 +8,11 @@ import Link from "next/link";
 import Logo from "./Logo";
 import { Button } from "./ui/button";
 import { title } from "process";
-import Menuitem from "./MenuItem";
 import { Menu } from "lucide-react";
 import { MobileNav } from "./MobileNav";
 import menu_items from "../lib/consts";
 
-import MenuitemCopy from "./MenuItem";
+import Menuitem2 from "./MenuItem2";
 
 const HeaderCopy = () => {
   return (
@@ -22,7 +21,7 @@ const HeaderCopy = () => {
         <Logo />
         <div className="hidden md:flex items-center gap-4  transition-all">
           {menu_items.map((item) => (
-            <MenuitemCopy
+            <Menuitem2
               key={item.name}
               name={item.name}
               link={item.link}

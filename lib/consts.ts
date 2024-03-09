@@ -21,7 +21,7 @@ const menu_items = [
     },
     {
       name: "Shop",
-      link: "/shop",
+      link: "#",
       hasSubMenu: true,
       submenu: [
         { title: "Test1", link: "/workshop1" },
