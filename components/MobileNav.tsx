@@ -12,11 +12,11 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { GiHamburgerMenu } from "react-icons/gi";
-import Menuitem from "./MenuItem";
+
 import { Key } from "react";
 import Logo from "./Logo";
 import menu_items from "@/lib/consts";
-import MenuitemCopy from "./MenuItem";
+import Menuitem from "./MenuItem";
 
 
 export function MobileNav() {
@@ -35,7 +35,7 @@ export function MobileNav() {
         </SheetHeader>
         <div className="flex flex-col items-center gap-4  transition-all">
           {menu_items.map((item) => (
-            <MenuitemCopy
+            <Menuitem
               key={item.name}
               name={item.name}
               link={item.link}

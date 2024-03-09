@@ -9,7 +9,7 @@ import {
 import Link from "next/link";
 import { useState } from "react";
 
-function MenuitemCopy(item: {
+function Menuitem(item: {
   name: string;
   link: string;
   submenu: any;
@@ -43,4 +43,4 @@ function MenuitemCopy(item: {
   );
 }
 
-export default MenuitemCopy;
+export default Menuitem;
